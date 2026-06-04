@@ -19,11 +19,11 @@ st.set_page_config(
 # ══════════════════════════════════════════════════════════════════════════════
 @st.cache_data
 def load_data():
-    return pd.read_csv("Mental_Health_Cleaned.csv")
-
+    df = pd.read_csv("Mental_Health_Cleaned.csv", encoding="utf-8-sig")
+    df.columns = df.columns.str.strip()
+    return df
+    
 df_raw = load_data()
-df_raw.columns = df_raw.columns.str.strip()
-st.write(df_raw.columns)
 
 @st.cache_data
 def get_pattern():
