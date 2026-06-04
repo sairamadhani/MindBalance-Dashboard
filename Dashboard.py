@@ -23,6 +23,7 @@ def load_data():
 
 df_raw = load_data()
 df_raw.columns = df_raw.columns.str.strip()
+st.write(df_raw.columns)
 
 @st.cache_data
 def get_pattern():
