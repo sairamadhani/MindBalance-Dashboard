@@ -22,6 +22,7 @@ def load_data():
     return pd.read_csv("Mental_Health_Cleaned.csv")
 
 df_raw = load_data()
+df_raw.columns = df_raw.columns.str.strip()
 
 @st.cache_data
 def get_pattern():
